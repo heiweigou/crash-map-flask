@@ -6,9 +6,14 @@
     "bootstrap": "^4.3.1",
     "d3": "^5.9.7",
     "leaflet": "^1.5.1",
+    "leaflet.markercluster": "^1.4.1",
+    "prop-types": "^15.7.2",
+    "rc-slider": "^8.6.13",
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.0-beta.10",
     "react-dom": "^16.8.6",
+    "react-leaflet": "^2.4.0",
+    "react-leaflet-markercluster": "^2.0.0-rc3",
     "react-scripts": "3.0.1"
   },
   "scripts": {

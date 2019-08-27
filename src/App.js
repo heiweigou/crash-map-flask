@@ -1,26 +1,37 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import MapContainer from './Map'
+import Slider from 'rc-slider';
+import 'rc-slider/assets/index.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends React.Component {
+    constructor(props){
+        super(props)
+        this.state={
+            filterValue:0
+        }
+        this.handlerChange=this.handlerChange.bind(this)
+    }
+
+    handlerChange (value) {
+        this.setState({filterValue:value})
+
+    }
+
+    render() {
+
+        return (
+            <div className="App">
+                <br/>
+                <Slider onChange={this.handlerChange} min={0} max={1} dots={true} step={0.2} />
+                {this.state.filterValue}
+                <MapContainer filterValue={this.state.filterValue}/>
+            </div>
+        );
+    }
+
 }
 
 export default App;

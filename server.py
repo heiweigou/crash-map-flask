@@ -1,5 +1,4 @@
 from flask import Flask, render_template,jsonify,json
-
 app = Flask(__name__, static_folder="build/static", template_folder="build")
 crashStr=open('src/geojson/crash-joined.json','r')
 crashJsonData=json.load(crashStr)
@@ -11,9 +10,9 @@ predictionJson=json.load(predictionData)
 def index():
     return render_template('index.html')
 
+
 @app.route("/crash")
 def crash():
-    
     return jsonify(data=crashJsonData)
 
 @app.route('/prediction')
