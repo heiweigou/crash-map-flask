@@ -2,31 +2,30 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import MapContainer from './Map'
-import Slider from 'rc-slider';
-import 'rc-slider/assets/index.css';
+import Leftsection from './Leftsection'
 
 
 class App extends React.Component {
     constructor(props){
         super(props)
         this.state={
-            filterValue:0
+            filterValue:0,
+            showCrash:true
         }
-        this.handlerChange=this.handlerChange.bind(this)
-    }
-
-    handlerChange (value) {
-        this.setState({filterValue:value})
 
     }
+
+    changeHandler(e){
+        console.log(e)
+        this.setState((prevState)=>({showCrash:!prevState.showCrash}))
+    }
+
 
     render() {
 
         return (
             <div className="App">
-                <br/>
-                <Slider onChange={this.handlerChange} min={0} max={1} dots={true} step={0.2} />
-                {this.state.filterValue}
+                <Leftsection changeHandler={this.changeHandler}/>
                 <MapContainer filterValue={this.state.filterValue}/>
             </div>
         );

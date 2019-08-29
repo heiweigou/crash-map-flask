@@ -73,15 +73,19 @@ class MapContainer extends React.Component {
             let latlng = [item.location.latitude, item.location.longitude]
             let id = item.id
             let dateOccured = item.dateOccurred
+
+            if (index>1000){
+                return
+            }
             return (
 
                 <CircleMarker center={latlng} key={id}>
-                    {/*<Popup minWidth={200} closeButton={false}>*/}
-                    {/*<div>*/}
-                    {/*<b>Date: {dateOccured}</b>*/}
+                    <Popup minWidth={200} closeButton={false}>
+                    <div>
+                    <b>Date: {dateOccured}</b>
 
-                    {/*</div>*/}
-                    {/*</Popup>*/}
+                    </div>
+                    </Popup>
                 </CircleMarker>
             )
 
