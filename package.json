@@ -8,13 +8,17 @@
     "jquery": "^3.4.1",
     "leaflet": "^1.5.1",
     "leaflet.markercluster": "^1.4.1",
+    "lodash.debounce": "^4.0.8",
+    "pip": "0.0.1",
     "prop-types": "^15.7.2",
     "rc-slider": "^8.6.13",
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.0-beta.10",
     "react-dom": "^16.8.6",
+    "react-js-pagination": "^3.0.2",
     "react-leaflet": "^2.4.0",
     "react-leaflet-markercluster": "^2.0.0-rc3",
+    "react-paginate": "^6.3.0",
     "react-scripts": "3.0.1"
   },
   "scripts": {

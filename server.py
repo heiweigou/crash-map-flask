@@ -6,6 +6,9 @@ crashJsonData=json.load(crashStr)
 predictionData=open('src/geojson/preds-viz.geojson','r')
 predictionJson=json.load(predictionData)
 
+localityData=open('src/geojson/Locality_geojson.json','r')
+localityJson=json.load(localityData)
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -18,6 +21,17 @@ def crash():
 @app.route('/prediction')
 def prediction():
     return jsonify(data=predictionJson)
+
+@app.route('/locality/<str>')
+def locality(str):
+    features=localityJson['features']
+    for feature in features:
+        if feature['properties']['LOC_NAME'].lower()==str.lower():
+            print (feature['properties']['LOC_NAME'])
+            return jsonify(data=feature)
+        
+    return 'not found'
+    
 
 print('Starting Flask!')
 app.debug=True
