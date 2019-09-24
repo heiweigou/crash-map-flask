@@ -5,6 +5,7 @@
   "dependencies": {
     "bootstrap": "^4.3.1",
     "d3": "^5.9.7",
+    "date-fns": "^2.1.0",
     "jquery": "^3.4.1",
     "leaflet": "^1.5.1",
     "leaflet.markercluster": "^1.4.1",
@@ -13,13 +14,17 @@
     "prop-types": "^15.7.2",
     "rc-slider": "^8.6.13",
     "react": "^16.8.6",
+    "react-autosuggest": "^9.4.3",
     "react-bootstrap": "^1.0.0-beta.10",
+    "react-datepicker": "^2.9.6",
     "react-dom": "^16.8.6",
     "react-js-pagination": "^3.0.2",
     "react-leaflet": "^2.4.0",
     "react-leaflet-markercluster": "^2.0.0-rc3",
     "react-paginate": "^6.3.0",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.88.1"
   },
   "scripts": {
     "start": "react-scripts start",

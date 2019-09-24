@@ -1,4 +1,5 @@
 from flask import Flask, render_template,jsonify,json
+from operator import itemgetter
 app = Flask(__name__, static_folder="build/static", template_folder="build")
 crashStr=open('src/geojson/crash-joined.json','r')
 crashJsonData=json.load(crashStr)
@@ -8,6 +9,12 @@ predictionJson=json.load(predictionData)
 
 localityData=open('src/geojson/Locality_geojson.json','r')
 localityJson=json.load(localityData)
+
+def sortPredictionList(predictiondata):
+    newlist =sorted(predictiondata['features'],key= lambda e:e['properties']['prediction'],reverse=True)  
+    return newlist[:10]
+
+
 
 @app.route('/')
 def index():
@@ -20,7 +27,7 @@ def crash():
 
 @app.route('/prediction')
 def prediction():
-    return jsonify(data=predictionJson)
+    return jsonify(data=predictionJson,prediction=sortPredictionList(predictionJson))
 
 @app.route('/locality/<str>')
 def locality(str):
